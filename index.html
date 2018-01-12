@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   <script src="js/BiChart2.js"></script>
+    <link rel="stylesheet" href="css/BiChart.css" type="text/css">
+    <script type="text/javascript" src="js/canvasjs.min.js"></script>
+<script>
+ function Help()
+        {
+            $("#helpModal").modal('show');
+        }
+</script>
+<style>
+        .canvasjs-chart-credit{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+	<input type="hidden" name="next" id="next" value="0">	
+	<div id="helpModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Information About Chart</h4>
+            </div>
+            <div class="modal-body">
+                <p>Do you want to save changes you made to document before closing?</p>
+                <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               <!--  <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Bimodulecls">
+<img src="image/BimoduleTxt.png" class="img">
+    <span class="txt" > TSM BI Module</span>
+
+</div>
+<hgroup>
+
+    <!--<span id="year">Years of</span>-->
+    <div id="years" class="jobcount">
+
+    </div>
+</hgroup>
+<div id="RespdivId" class="RespDiv" >
+    <ul>
+      <li><img src="image/ChartImg.png" onclick="loadData();"></li>
+        <li><img class="RadiusImg" src="image/Tech.png" onclick="loadData();"></li>
+        <li><img class="RadiusImg" src="image/Billing.png" onclick="loadData();"></li>
+        <li><img class="RadiusImg" src="image/cashflow.png" onclick="loadData();"></li>
+    </ul>
+    <button style="position:absolute;left: 400px; top:500px;" type="button" class="btn btn-warning" onclick="closeWindow()">Exit</button>
+    <img src="image/help.png" style="position:absolute;left: 460px; top:495px; cursor:pointer" onClick="Help()">
+</div>
+
+<div id="chartContainer" style="height: 500px; width: 100%; margin-top:50px; display:none"></div> 
+<button style="float:right; margin-right: 5px;" id="NxtBtn" type="button" class="btn btn-info" onClick="loadAllData('nextbtn')">Next</button>
+<button  id="PrevBtn" style="float:right; margin-right: 20px; display:none;" type="button"  class="btn btn-info" onClick="loadAllData('previous')">Previous</button>
+<button  id="menuBtn1" style="float:right; margin-right: 20px;" type="button"  class="btn btn-warning" onClick="ExistFun()">Menu</button>
+<div id="radioChk1" style="position: absolute; left: 75%; top: 64px; display: block;">
+    <input type="radio" class="choice" name="choice" value="bar" onClick="javascript:showChart();" checked="checked" /><label for="radio1">Barchart</label>
+    <input type="radio" class="choice" name="choice" value="pie" onClick="javascript:showChart();"  /><label for="radio2" >Piechart</label>
+    <input type="radio" class="choice" name="choice" value="line" onClick="javascript:showChart();" /><label for="radio3">Linechart</label>
+</div>
+
+
+</body>
+</html>
